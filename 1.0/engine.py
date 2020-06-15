@@ -66,6 +66,7 @@ class EventEngine:
                 # 从队列里取数据，如果为空的话，blocking = False 直接报 empty异常。如果blocking = True，就是等一会，timeout必须为 0 或正数。None为一直等下去，0为不等，正数n为等待n秒还不能读取，报empty异常
                 event = self._queue.get(block=True, timeout=1)
                 self._process(event)
+                print(self._handlers)
             except Empty:
                 pass
 

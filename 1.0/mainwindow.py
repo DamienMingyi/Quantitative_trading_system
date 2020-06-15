@@ -186,11 +186,11 @@ class MainWindow(QtWidgets.QMainWindow):
             "editor.ico",
             partial(self.open_widget, CodeEditor, "editor")
         )
-        self.add_toolbar_action(
-            "代码编辑",
-            "code.png",
-            partial(self.open_widget, CodeEditor, "editor")
-        )
+        # self.add_toolbar_action(
+        #     "代码编辑",
+        #     "code.png",
+        #     partial(self.open_widget, CodeEditor, "editor")
+        # )
 
         self.add_menu_action(
             help_menu, "还原窗口", "restore.ico", self.restore_window_setting

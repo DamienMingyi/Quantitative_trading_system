@@ -733,6 +733,7 @@ class TradingWidget(QtWidgets.QWidget):
     def register_event(self):
         """"""
         self.signal_tick.connect(self.process_tick_event)
+        # emit 将参数传给所有的connect的槽函数
         self.event_engine.register(EVENT_TICK, self.signal_tick.emit)
 
     def process_tick_event(self, event: Event):
@@ -1148,7 +1149,7 @@ class NewsWidget(QtWidgets.QWidget):
 
     def browser_init(self):
         # self.browser.load(QUrl('https://finance.sina.com.cn/futuremarket/'))
-        self.browser.load(QUrl('https://www.vnpy.com/forum/'))
+        self.browser.load(QUrl('https://www.baidu.com/'))
         self.browser.urlChanged.connect(lambda: self.url_le.setText(self.browser.url().toDisplayString()))
 
     def btn_init(self):  # 4
